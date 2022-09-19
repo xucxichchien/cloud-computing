@@ -36,7 +36,7 @@ router.use((yeucau, trave, next) => {
     next();
 });
 
-router.get('/home', (yeucau,trave) => {
+router.get('home', (yeucau,trave) => {
     res.send("ok");
 });
 
