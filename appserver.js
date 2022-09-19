@@ -18,7 +18,7 @@ router.get( "/home" , (yeucau, trave) => {
 });
 
 router.get( "/products" , (yeucau, trave) => {
-    data = fs.readFileSync("./html/products.html");
+    data = fs.readFileSync("products.html");
     pageContent = data.toString();
     trave.send(pageContent);
 });
