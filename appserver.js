@@ -31,12 +31,12 @@ const express = require('express');
 const app = express();
 const router = express.Router();
 
-router.use((req, res, next) => {
+router.use((yeucau, trave, next) => {
     console.log('Time: ', Date.now());
     next();
 });
 
-router.get('/home', (req,res) => {
+router.get('/home', (yeucau,trave) => {
     res.send("ok");
 });
 
