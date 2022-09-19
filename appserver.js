@@ -1,8 +1,8 @@
-const  express = require("express");
-const PORT = process.env.PORT || 80;
-const appServer = express();
-const router = express.Router();
-const fs = require("fs");
+//const  express = require("express");
+//const PORT = process.env.PORT || 80;
+//const appServer = express();
+//const router = express.Router();
+//const fs = require("fs");
 
 // ------------------- Routing
 router.get( "/" , (yeucau, trave) => {
@@ -25,6 +25,23 @@ router.get( "/products" , (yeucau, trave) => {
 
 
 // -------------------------
+
+// ----------------Middleware
+const express = require('express');
+const app = express();
+const router = express.Router();
+
+router.use((req, res, next) => {
+    console.log('Time: ', Date.now());
+    next();
+});
+
+router.get('/home', (req,res) => {
+    res.send("ok");
+});
+
+app.use('/', router);
+//----------------------
 appServer.use("/", router);
 // ----------- RUN / Launching !!! 
 appServer.listen( PORT );
